@@ -1,0 +1,24 @@
+﻿@using FoodRecipes.Settings
+@model Food;
+
+@{
+    ViewData["Tilte"] = Model.Name;
+}
+<div class="d-flex align-items-center justify-content-center">
+
+<div class="card border-primary mt-5 overflow-hidden">
+    <div class="row p-0 align-items-center">
+        <div class="col-md-8">
+            <div class="p-4 flex-column d-flex gap-2">
+                <h2 class="fw-bold">@Model.Name</h2>
+                <span class="badge bg-primary fw-bold d-block">@Model.Category.Name</span>
+                <span class=" " style="font-size:20px;">@Model.Recipe</span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <img src=@($"{FileSettings.IMAGE_PATH}/{Model.Image.ToString()}") alt=@Model.Name style="width:100%; p-0px; height:300px" />
+
+        </div>
+    </div>
+</div>
+</div>

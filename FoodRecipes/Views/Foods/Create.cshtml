@@ -1,0 +1,46 @@
+﻿@model CreateFoodFormViewModel
+@{ViewData["Title"] = "Add New Recipe";}
+<h1> <i class="bi bi-plus-circle-fill "></i> Add Food Recipe</h1>
+
+<form asp-controller="Foods" enctype="multipart/form-data" asp-action="Create" method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Name" class="form-label mt-4">Name</label>
+                <input type="text" class="form-control" asp-for="Name" placeholder="Enter Name">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="Recipe" class="form-label mt-4">Recipe</label>
+                <textarea class="form-control" asp-for="Recipe" placeholder="Enter Description"></textarea>
+                <span asp-validation-for="Recipe" class="text-danger"></span>
+            </div>
+              <div class="form-group">
+                <label asp-for="CategoryId" class="form-label mt-4">Select a category</label>
+                <select class="form-select" asp-for="CategoryId" asp-items="Model.Categories"></select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="form-label mt-4">Select a category</label>
+                <input type="file" class="form-control" asp-for="Image"/>
+                <small class="form-text text-muted">The file support only images with size less than 1MB.</small>
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary mt-4 ">Add</button>
+        </div>
+        <div class="col-md-6">
+            <img alt="Image" id="Image" class="image-preview d-none" />
+        </div>
+    </div>
+</form>
+
+
+@section Scripts{
+    <script >
+        $(document).ready(function(){
+            $('#Image').on('change', function () {
+                $('.image-preview').attr('src', window.URL.createObjectURL(this.files[0])).removeClass('d-none')
+            });
+        })
+    </script>
+}

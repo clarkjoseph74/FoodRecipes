@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Food>;
+@using FoodRecipes.Settings;
+@{
+    ViewData["Title"] = "Home Page";
+}
+@if (!Model.Any())
+{
+    <div class="alert alert-dismissible alert-warning mt-3">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <h4 class="alert-heading">No Food Recipes !</h4>
+        <p class="mb-0">No Recipes was addes yet -_-<a href="#" class="alert-link"></a>.</p>
+    </div>
+}
+else
+{
+<div class="row mt-5">
+        @foreach (var food in Model)
+        {
+            <div class="col-md-6 col-lg-4">
+                <a class="card border-secondary text-decoration-none mb-3" style="max-width: 20rem;" asp-controller="Foods" asp-action="Details" asp-route-id="@food.Id">
+                   
+                    <div class="card-body" style="background-image: url(@($"{FileSettings.IMAGE_PATH}/{food.Image.ToString()}")); background-size:cover; background-position:center; height:200px">
+
+                        <div class="h-100">
+                            <span class="badge bg-secondary">@food.Category?.Name</span>
+                           
+                        </div>
+                    </div> <div class="card-footer text-muted">
+                        <h5>
+                            @food.Name
+                        </h5>
+                    </div>
+                </a>
+            </div>
+        }
+</div>
+}
