@@ -17,10 +17,14 @@
     -   Display recipes with clear formatting and images.
     -   View detailed instructions for each recipe.
     
--   **User authentication:**
     
-    -   Securely manage user accounts (optional).
-    
+
+
+## Some Views
+![main](https://github.com/clarkjoseph74/FoodRecipes/assets/77942463/d19f6ea9-7ead-440d-8a34-9f1e274a9b00)
+![details](https://github.com/clarkjoseph74/FoodRecipes/assets/77942463/b0f80b38-a4e2-4431-b033-4a8c2b9b3315)
+![Screenshot 2023-12-29 153647](https://github.com/clarkjoseph74/FoodRecipes/assets/77942463/78889ea1-406c-4253-8980-140d05213cba)
+![Edit](https://github.com/clarkjoseph74/FoodRecipes/assets/77942463/e55eac6a-46a0-4065-81f2-30581d7a0d32)
 
 ## Technologies Used
 
